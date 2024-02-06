@@ -1,0 +1,7 @@
+name: central
+title: GGCode Central Repository
+repositories:
+- name: docker
+  uri: git@github.com:ntr1x/ggcode-repo-docker.git
+- name: spring
+  uri: git@github.com:ntr1x/ggcode-repo-spring.git
