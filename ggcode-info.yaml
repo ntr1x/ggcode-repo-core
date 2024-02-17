@@ -6,4 +6,4 @@ repositories:
 - name: spring
   uri: git@github.com:ntr1x/ggcode-repo-spring.git
 - name: autocast
-  uri: git@github.com:ntr1x/ggcode-repo-spring.git
+  uri: git@github.com:ntr1x/ggcode-repo-autocast.git
