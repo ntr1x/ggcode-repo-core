@@ -15,11 +15,11 @@ local function snakeToProp(input)
 end
 
 local function propToPath(input)
-  return string.gsub(input, "(\.)", "/")
+  return string.gsub(input, "([\.])", "/")
 end
 
 local function propToSnake(input)
-  return string.gsub(input, "(\.)", "_")
+  return string.gsub(input, "([\.])", "_")
 end
 
 return {
