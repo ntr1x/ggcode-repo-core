@@ -27,10 +27,22 @@ local function snakeToPropCase(input)
   return string.gsub(input, "(_)", ".")
 end
 
+local function propToPathCase(input)
+  return string.gsub(input, "(.)", "/")
+end
+
+local function propToSnakeCase(input)
+  return string.gsub(input, "(.)", "_")
+end
+
 return {
   spread = spread,
+
   snakeToCamelCase = snakeToCamelCase,
   snakeToPascalCase = snakeToPascalCase,
   snakeToKebabCase = snakeToKebabCase,
   snakeToPropCase = snakeToPropCase,
+
+  propToPathCase = propToPathCase,
+  propToSnakeCase = propToSnakeCase,
 }
