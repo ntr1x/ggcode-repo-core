@@ -1,2 +1,4 @@
 name: central
-title: GGCode Central Repository
+actions:
+- name: test/path
+  path: test/path.luau

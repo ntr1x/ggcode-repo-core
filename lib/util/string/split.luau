@@ -10,4 +10,5 @@ return {
   split = split,
   EXPR_COMMA = '([^,]+)',
   EXPR_COLON = '([^:]+)',
+  EXPR_SLASH = '([^/]+)',
 }
