@@ -2,3 +2,5 @@ name: central
 actions:
 - name: test/path
   path: test/path.luau
+- name: test/string
+  path: test/string.luau

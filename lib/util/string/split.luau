@@ -8,6 +8,7 @@ end
 
 return {
   split = split,
+  EXPR_DOT = '([^\.]+)',
   EXPR_COMMA = '([^,]+)',
   EXPR_COLON = '([^:]+)',
   EXPR_SLASH = '([^/]+)',
