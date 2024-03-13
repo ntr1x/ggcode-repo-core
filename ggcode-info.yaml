@@ -1,6 +1,8 @@
 name: central
 actions:
-- name: test/path
-  path: test/path.luau
-- name: test/string
-  path: test/string.luau
+- name: test/util/path
+  path: test/util/path.luau
+- name: test/util/string
+  path: test/util/string.luau
+- name: test/util/uri
+  path: test/util/uri.luau
