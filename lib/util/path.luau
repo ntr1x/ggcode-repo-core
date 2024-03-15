@@ -58,7 +58,7 @@ function Path:normalize()
   return Path:new({ entries = entries })
 end
 
-function Path:from_segments (segments: table)
+function Path:from_segments(segments: table)
   local entries = {}
   for i, segment in segments do
     if i > 1 then
@@ -88,6 +88,10 @@ function Path:from_string(st: string)
   return Path:new({ entries = entries })
 end
 
+function Path:parse(st: string)
+  return Path:from_string(st)
+end
+
 function Path:join_path(other: Path)
   local entries = nil
   if #self.entries > 0 and #other.entries > 0 and self.entries[#self.entries].type ~= TYPE_SEPARATOR and other.entries[1].type ~= TYPE_SEPARATOR then
@@ -101,6 +105,18 @@ end
 function Path:join_string(st: string)
   local other = Path:from_string(st)
   return self:join_path(other)
+end
+
+function Path:path_array()
+  local array = {}
+  for item in self:to_string():gmatch("([^/]+)") do
+    array[#array + 1] = item
+  end
+  return array
+end
+
+function Path:path()
+  return table.unpack(self:path_array())
 end
 
 return Path

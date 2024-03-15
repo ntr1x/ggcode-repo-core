@@ -18,3 +18,8 @@ assert('one/two/three/four' == Path:from_string('one/two'):join_string('three/fo
 assert('one/two/three/four' == Path:from_string('one/two'):join_string('/three/four'):normalize():to_string())
 assert('one/two/three/four' == Path:from_string('one/two/'):join_string('three/four'):normalize():to_string())
 assert('one/two/three/four' == Path:from_string('one/two/'):join_string('/three/four'):normalize():to_string())
+
+local first, second, third = Path:parse('/first/second/third'):path()
+assert('first' == first)
+assert('second' == second)
+assert('third' == third)
