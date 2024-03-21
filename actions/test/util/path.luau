@@ -1,4 +1,4 @@
-local Path = require('util/path')
+local Path = require('core/Path')
 
 assert('' == Path:new():to_string())
 assert('path/to/smth' == Path:from_segments({ 'path', 'to', 'smth' }):to_string())

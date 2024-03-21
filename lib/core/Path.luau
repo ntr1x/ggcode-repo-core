@@ -1,4 +1,4 @@
-local ARRAY = require('util/array')
+local ARRAY = require('core/util/array')
 
 local Path = {
   entries = {}
