@@ -1,5 +1,7 @@
 name: core
 actions:
+- name: test/util/array
+  path: actions/test/util/array.luau
 - name: test/util/path
   path: actions/test/util/path.luau
 - name: test/util/string
