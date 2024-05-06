@@ -8,3 +8,5 @@ actions:
   path: actions/test/util/string.luau
 - name: test/util/uri
   path: actions/test/util/uri.luau
+- name: test/util/case
+  path: actions/test/util/case.luau

@@ -15,7 +15,8 @@ local function snakeToProp(input)
 end
 
 local function snakeToTitle(input)
-  return string.gsub(" "..input, " (.)", string.upper):sub(1)
+  local result = input:gsub("(_)", " "):gsub("%f[%a].", string.upper)
+  return result
 end
 
 local function propToPath(input)
