@@ -219,7 +219,13 @@ function URI:with_password(password: string)
   return self
 end
 
-function URI:join_path(subpath: string)
+function URI:resolve(subpath: string)
+  if subpath == nil then
+    return self:with_path(nil)
+  end
+  if subpath:find('^' .. '/') then
+    return self:with_path(subpath)
+  end
   self.path = (self.path or '/') .. subpath
   return self
 end
