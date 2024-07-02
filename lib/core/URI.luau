@@ -174,4 +174,54 @@ function URI:format_jdbc()
   return self:format_nested('jdbc')
 end
 
+function URI:with_schema(schema: string)
+  self.schema = schema
+  return self
+end
+
+function URI:override_schema(overrides: table)
+  self.schema = overrides[self.schema] or self.schema
+  return self
+end
+
+function URI:with_port(port: string)
+  self.port = port
+  return self
+end
+
+function URI:with_hostname(hostname: string)
+  self.hostname = hostname
+  return self
+end
+
+function URI:with_path(path: string)
+  self.path = path
+  return self
+end
+
+function URI:with_query(query: string)
+  self.query = query
+  return self
+end
+
+function URI:with_fragment(fragment: string)
+  self.fragment = fragment
+  return self
+end
+
+function URI:with_username(username: string)
+  self.username = username
+  return self
+end
+
+function URI:with_password(password: string)
+  self.password = password
+  return self
+end
+
+function URI:join_path(subpath: string)
+  self.path = (self.path or '/') .. subpath
+  return self
+end
+
 return URI
