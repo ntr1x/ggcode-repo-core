@@ -223,11 +223,16 @@ function URI:resolve(subpath: string)
   if subpath == nil then
     return self:with_path(nil)
   end
-  if subpath:find('^' .. '/') then
+  if subpath:find('^/') then
     return self:with_path(subpath)
   end
-  self.path = (self.path or '/') .. subpath
-  return self
+  if self.path == '' or self.path == nil then
+    return self:with_path(subpath)
+  end
+  if self.path:find('/$') then
+    return self:with_path(self.path .. subpath)
+  end
+  return self:with_path(self.path .. '/' .. subpath)
 end
 
 return URI
