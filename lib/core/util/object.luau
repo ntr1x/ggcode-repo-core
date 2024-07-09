@@ -22,7 +22,19 @@ local function deep_copy(obj: any, seen: ({ [any]: {} })?)
   return setmetatable(res, getmetatable(obj))
 end
 
+local function merge(t1: table, t2: table)
+  for k, v in pairs(t2) do
+    if (type(v) == "table") and (type(t1[k] or false) == "table") then
+      merge(t1[k], t2[k])
+    else
+      t1[k] = v
+    end
+  end
+  return t1
+end
+
 return {
   spread = spread,
   deep_copy = deep_copy,
+  merge = merge,
 }
